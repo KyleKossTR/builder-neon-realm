@@ -1,4 +1,11 @@
-import { Plus, HelpCircle, Bell, Grid3X3, X, ArrowRightFromLine } from "lucide-react";
+import {
+  Plus,
+  HelpCircle,
+  Bell,
+  Grid3X3,
+  X,
+  ArrowRightFromLine,
+} from "lucide-react";
 
 interface HeaderProps {
   onCloseExplorer?: () => void;
@@ -59,7 +66,7 @@ export function Header({ onCloseExplorer }: HeaderProps) {
       <div className="w-full h-12 bg-tr-gray-50 border-b border-tr-gray-200 flex items-center">
         {/* Window Action */}
         <div className="w-64 px-6 py-2 flex items-center gap-2 border-r border-tr-gray-200 h-full">
-          <button 
+          <button
             onClick={onCloseExplorer}
             className="p-2 hover:bg-gray-100 rounded"
           >

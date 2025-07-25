@@ -14,9 +14,27 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Source Sans 3", "-apple-system", "Roboto", "Helvetica", "sans-serif"],
-        clario: ["Clario", "-apple-system", "Roboto", "Helvetica", "sans-serif"],
-        knowledge: ["Knowledge2017", "-apple-system", "Roboto", "Helvetica", "sans-serif"],
+        sans: [
+          "Source Sans 3",
+          "-apple-system",
+          "Roboto",
+          "Helvetica",
+          "sans-serif",
+        ],
+        clario: [
+          "Clario",
+          "-apple-system",
+          "Roboto",
+          "Helvetica",
+          "sans-serif",
+        ],
+        knowledge: [
+          "Knowledge2017",
+          "-apple-system",
+          "Roboto",
+          "Helvetica",
+          "sans-serif",
+        ],
       },
       colors: {
         border: "hsl(var(--border))",

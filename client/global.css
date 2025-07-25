@@ -40,14 +40,14 @@
     --radius: 0.25rem;
 
     /* Thomson Reuters specific colors */
-    --tr-orange-400: #D64000;
-    --tr-gray-50: #FAFAFA;
-    --tr-gray-100: #F2F2F2;
-    --tr-gray-200: #E6E6E6;
+    --tr-orange-400: #d64000;
+    --tr-gray-50: #fafafa;
+    --tr-gray-100: #f2f2f2;
+    --tr-gray-200: #e6e6e6;
     --tr-gray-300: #737373;
     --tr-gray-400: #404040;
-    --tr-gray-900: #1F1F1F;
-    --tr-white: #FFFFFF;
+    --tr-gray-900: #1f1f1f;
+    --tr-white: #ffffff;
 
     --sidebar-background: 0 0% 98%;
 

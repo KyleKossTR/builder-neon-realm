@@ -5,7 +5,9 @@ import { MainContent } from "../components/MainContent";
 import { SummaryPanel } from "../components/SummaryPanel";
 
 export default function Index() {
-  const [selectedAsset, setSelectedAsset] = useState<SourceAsset>(sourceAssets[4]); // Default to Figma
+  const [selectedAsset, setSelectedAsset] = useState<SourceAsset>(
+    sourceAssets[4],
+  ); // Default to Figma
 
   const handleCloseExplorer = () => {
     console.log("Close explorer clicked");

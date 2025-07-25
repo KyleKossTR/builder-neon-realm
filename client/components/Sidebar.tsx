@@ -6,74 +6,80 @@ export interface SourceAsset {
   brandIcon: string;
   source: string;
   title: string;
-  type: 'code' | 'documents' | 'design';
-  contentType: 'storybook' | 'atrium' | 'w3c' | 'figma';
+  type: "code" | "documents" | "design";
+  contentType: "storybook" | "atrium" | "w3c" | "figma";
 }
 
 export const sourceAssets: SourceAsset[] = [
   {
-    id: '1',
-    brand: 'storybook',
-    brandIcon: 'https://api.builder.io/api/v1/image/assets/TEMP/2d266e582fd54793ea4bc8b80f8254d3772b4f87?width=46',
-    source: 'Storybook',
-    title: 'Saffron dialog',
-    type: 'code',
-    contentType: 'storybook'
+    id: "1",
+    brand: "storybook",
+    brandIcon:
+      "https://api.builder.io/api/v1/image/assets/TEMP/2d266e582fd54793ea4bc8b80f8254d3772b4f87?width=46",
+    source: "Storybook",
+    title: "Saffron dialog",
+    type: "code",
+    contentType: "storybook",
   },
   {
-    id: '2',
-    brand: 'tr',
-    brandIcon: 'https://api.builder.io/api/v1/image/assets/TEMP/40d0c16ac8bf4592bb8f83c01cd70ad5068cfa30?width=64',
-    source: 'Atrium',
-    title: 'Modal and Dialogs',
-    type: 'documents',
-    contentType: 'atrium'
+    id: "2",
+    brand: "tr",
+    brandIcon:
+      "https://api.builder.io/api/v1/image/assets/TEMP/40d0c16ac8bf4592bb8f83c01cd70ad5068cfa30?width=64",
+    source: "Atrium",
+    title: "Modal and Dialogs",
+    type: "documents",
+    contentType: "atrium",
   },
   {
-    id: '3',
-    brand: 'w3c',
-    brandIcon: 'https://api.builder.io/api/v1/image/assets/TEMP/f442e2187f541fe25a78a6c8f48e0d2c4eee061c?width=65',
-    source: 'World Wide Web Consortium',
-    title: 'Dialog (Modal) Pattern | APG | WAI | W3C',
-    type: 'documents',
-    contentType: 'w3c'
+    id: "3",
+    brand: "w3c",
+    brandIcon:
+      "https://api.builder.io/api/v1/image/assets/TEMP/f442e2187f541fe25a78a6c8f48e0d2c4eee061c?width=65",
+    source: "World Wide Web Consortium",
+    title: "Dialog (Modal) Pattern | APG | WAI | W3C",
+    type: "documents",
+    contentType: "w3c",
   },
   {
-    id: '4',
-    brand: 'w3c',
-    brandIcon: 'https://api.builder.io/api/v1/image/assets/TEMP/f442e2187f541fe25a78a6c8f48e0d2c4eee061c?width=65',
-    source: 'World Wide Web Consortium',
-    title: 'Dialog (Modal) Pattern | APG | WAI | W3C',
-    type: 'documents',
-    contentType: 'w3c'
+    id: "4",
+    brand: "w3c",
+    brandIcon:
+      "https://api.builder.io/api/v1/image/assets/TEMP/f442e2187f541fe25a78a6c8f48e0d2c4eee061c?width=65",
+    source: "World Wide Web Consortium",
+    title: "Dialog (Modal) Pattern | APG | WAI | W3C",
+    type: "documents",
+    contentType: "w3c",
   },
   {
-    id: '5',
-    brand: 'figma',
-    brandIcon: 'https://api.builder.io/api/v1/image/assets/TEMP/9ad507da15eed4e0b7513e9bb5d9f98111342718?width=92',
-    source: 'Figma',
-    title: 'Saffron component library',
-    type: 'design',
-    contentType: 'figma'
+    id: "5",
+    brand: "figma",
+    brandIcon:
+      "https://api.builder.io/api/v1/image/assets/TEMP/9ad507da15eed4e0b7513e9bb5d9f98111342718?width=92",
+    source: "Figma",
+    title: "Saffron component library",
+    type: "design",
+    contentType: "figma",
   },
   {
-    id: '6',
-    brand: 'figma',
-    brandIcon: 'https://api.builder.io/api/v1/image/assets/TEMP/9ad507da15eed4e0b7513e9bb5d9f98111342718?width=92',
-    source: 'Figma',
-    title: '{Project file name}: a11y annotation example',
-    type: 'design',
-    contentType: 'figma'
-  }
+    id: "6",
+    brand: "figma",
+    brandIcon:
+      "https://api.builder.io/api/v1/image/assets/TEMP/9ad507da15eed4e0b7513e9bb5d9f98111342718?width=92",
+    source: "Figma",
+    title: "{Project file name}: a11y annotation example",
+    type: "design",
+    contentType: "figma",
+  },
 ];
 
 function getTypeIcon(type: string) {
   switch (type) {
-    case 'code':
+    case "code":
       return <Code className="w-4 h-4 text-tr-gray-300" />;
-    case 'documents':
+    case "documents":
       return <Files className="w-4 h-4 text-tr-gray-300" />;
-    case 'design':
+    case "design":
       return <PenTool className="w-4 h-4 text-tr-gray-300" />;
     default:
       return <Files className="w-4 h-4 text-tr-gray-300" />;
@@ -94,7 +100,7 @@ export function Sidebar({ selectedAssetId, onSelectAsset }: SidebarProps) {
           <div
             key={asset.id}
             className={`relative flex items-start gap-2 p-4 pl-6 border-b border-tr-gray-200 cursor-pointer hover:bg-gray-50 ${
-              isActive ? 'bg-tr-gray-50' : ''
+              isActive ? "bg-tr-gray-50" : ""
             }`}
             onClick={() => onSelectAsset(asset)}
           >
@@ -118,7 +124,7 @@ export function Sidebar({ selectedAssetId, onSelectAsset }: SidebarProps) {
                 </svg>
               </div>
             )}
-            
+
             {/* Content */}
             <div className="relative z-10 flex items-start gap-2 w-full">
               {/* Brand Icon */}
@@ -127,8 +133,11 @@ export function Sidebar({ selectedAssetId, onSelectAsset }: SidebarProps) {
                   src={asset.brandIcon}
                   alt={asset.brand}
                   className={`${
-                    asset.brand === 'figma' ? 'w-12 h-12 -ml-2 -mt-2' : 
-                    asset.brand === 'w3c' ? 'w-8 h-6' : 'w-6 h-6'
+                    asset.brand === "figma"
+                      ? "w-12 h-12 -ml-2 -mt-2"
+                      : asset.brand === "w3c"
+                        ? "w-8 h-6"
+                        : "w-6 h-6"
                   }`}
                 />
               </div>
