@@ -17,18 +17,20 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white min-w-[1280px]">
       {/* Header */}
       <Header onCloseExplorer={handleCloseExplorer} />
-      
+
       {/* Main Layout */}
-      <div className="flex h-[728px]">
+      <div className="flex h-[728px] w-full">
         {/* Sidebar */}
         <Sidebar onSelectAsset={handleSelectAsset} />
-        
+
         {/* Main Content */}
-        <MainContent />
-        
+        <div className="w-[704px]">
+          <MainContent />
+        </div>
+
         {/* Summary Panel */}
         <SummaryPanel />
       </div>
