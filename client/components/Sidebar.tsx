@@ -81,74 +81,78 @@ function getTypeIcon(type: string) {
 }
 
 interface SidebarProps {
-  onSelectAsset?: (assetId: string) => void;
+  selectedAssetId: string;
+  onSelectAsset: (asset: SourceAsset) => void;
 }
 
-export function Sidebar({ onSelectAsset }: SidebarProps) {
+export function Sidebar({ selectedAssetId, onSelectAsset }: SidebarProps) {
   return (
     <div className="w-64 h-[728px] border-r border-tr-gray-200 flex flex-col">
-      {sourceAssets.map((asset) => (
-        <div
-          key={asset.id}
-          className={`relative flex items-start gap-2 p-4 pl-6 border-b border-tr-gray-200 cursor-pointer hover:bg-gray-50 ${
-            asset.isActive ? 'bg-tr-gray-50' : ''
-          }`}
-          onClick={() => onSelectAsset?.(asset.id)}
-        >
-          {/* Active state indicator */}
-          {asset.isActive && (
-            <div className="absolute inset-0 -right-2">
-              <svg
-                width="266"
-                height="81"
-                viewBox="0 0 266 81"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full"
-              >
-                <path
-                  d="M255.953 0.5L265.485 40.5L255.953 80.5H0.5V0.5H255.953Z"
-                  fill="#FAFAFA"
-                  stroke="#737373"
-                  strokeWidth="1"
+      {sourceAssets.map((asset) => {
+        const isActive = asset.id === selectedAssetId;
+        return (
+          <div
+            key={asset.id}
+            className={`relative flex items-start gap-2 p-4 pl-6 border-b border-tr-gray-200 cursor-pointer hover:bg-gray-50 ${
+              isActive ? 'bg-tr-gray-50' : ''
+            }`}
+            onClick={() => onSelectAsset(asset)}
+          >
+            {/* Active state indicator */}
+            {isActive && (
+              <div className="absolute inset-0 -right-2">
+                <svg
+                  width="266"
+                  height="81"
+                  viewBox="0 0 266 81"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-full h-full"
+                >
+                  <path
+                    d="M255.953 0.5L265.485 40.5L255.953 80.5H0.5V0.5H255.953Z"
+                    fill="#FAFAFA"
+                    stroke="#737373"
+                    strokeWidth="1"
+                  />
+                </svg>
+              </div>
+            )}
+            
+            {/* Content */}
+            <div className="relative z-10 flex items-start gap-2 w-full">
+              {/* Brand Icon */}
+              <div className="w-8 h-8 bg-white rounded flex items-center justify-center flex-shrink-0">
+                <img
+                  src={asset.brandIcon}
+                  alt={asset.brand}
+                  className={`${
+                    asset.brand === 'figma' ? 'w-12 h-12 -ml-2 -mt-2' : 
+                    asset.brand === 'w3c' ? 'w-8 h-6' : 'w-6 h-6'
+                  }`}
                 />
-              </svg>
-            </div>
-          )}
-          
-          {/* Content */}
-          <div className="relative z-10 flex items-start gap-2 w-full">
-            {/* Brand Icon */}
-            <div className="w-8 h-8 bg-white rounded flex items-center justify-center flex-shrink-0">
-              <img
-                src={asset.brandIcon}
-                alt={asset.brand}
-                className={`${
-                  asset.brand === 'figma' ? 'w-12 h-12 -ml-2 -mt-2' : 
-                  asset.brand === 'w3c' ? 'w-8 h-6' : 'w-6 h-6'
-                }`}
-              />
-            </div>
-
-            {/* Details */}
-            <div className="flex-1 min-w-0">
-              <div className="text-xs font-semibold text-tr-gray-400 leading-tight line-clamp-2 mb-0.5">
-                {asset.source}
               </div>
-              <div className="text-sm text-tr-gray-400 leading-tight line-clamp-3">
-                {asset.title}
-              </div>
-            </div>
 
-            {/* Type Icon */}
-            <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
-              <div className="w-8 h-8 rounded flex items-center justify-center">
-                {getTypeIcon(asset.type)}
+              {/* Details */}
+              <div className="flex-1 min-w-0">
+                <div className="text-xs font-semibold text-tr-gray-400 leading-tight line-clamp-2 mb-0.5">
+                  {asset.source}
+                </div>
+                <div className="text-sm text-tr-gray-400 leading-tight line-clamp-3">
+                  {asset.title}
+                </div>
+              </div>
+
+              {/* Type Icon */}
+              <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded flex items-center justify-center">
+                  {getTypeIcon(asset.type)}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
