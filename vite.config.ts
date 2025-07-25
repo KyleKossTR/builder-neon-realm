@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: "dist/spa",
+    outDir: "docs/",
   },
   base: '/builder-neon-realm/',
   plugins: [react(), expressPlugin()],
