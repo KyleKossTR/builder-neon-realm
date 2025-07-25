@@ -21,9 +21,9 @@ export function W3CContent() {
         {/* Navigation breadcrumb */}
         <div className="text-xs text-blue-600">
           <span className="hover:underline cursor-pointer">WAI-ARIA Authoring Practices Guide</span>
-          <span className="text-tr-gray-400 mx-2">></span>
+          <span className="text-tr-gray-400 mx-2">&gt;</span>
           <span className="hover:underline cursor-pointer">Design Patterns and Widgets</span>
-          <span className="text-tr-gray-400 mx-2">></span>
+          <span className="text-tr-gray-400 mx-2">&gt;</span>
           <span className="text-tr-gray-900">Dialog (Modal)</span>
         </div>
 
