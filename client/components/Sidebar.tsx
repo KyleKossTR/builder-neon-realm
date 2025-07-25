@@ -1,23 +1,24 @@
 import { Code, Files, PenTool } from "lucide-react";
 
-interface SourceAsset {
+export interface SourceAsset {
   id: string;
   brand: string;
   brandIcon: string;
   source: string;
   title: string;
   type: 'code' | 'documents' | 'design';
-  isActive?: boolean;
+  contentType: 'storybook' | 'atrium' | 'w3c' | 'figma';
 }
 
-const sourceAssets: SourceAsset[] = [
+export const sourceAssets: SourceAsset[] = [
   {
     id: '1',
     brand: 'storybook',
     brandIcon: 'https://api.builder.io/api/v1/image/assets/TEMP/2d266e582fd54793ea4bc8b80f8254d3772b4f87?width=46',
     source: 'Storybook',
     title: 'Saffron dialog',
-    type: 'code'
+    type: 'code',
+    contentType: 'storybook'
   },
   {
     id: '2',
@@ -25,7 +26,8 @@ const sourceAssets: SourceAsset[] = [
     brandIcon: 'https://api.builder.io/api/v1/image/assets/TEMP/40d0c16ac8bf4592bb8f83c01cd70ad5068cfa30?width=64',
     source: 'Atrium',
     title: 'Modal and Dialogs',
-    type: 'documents'
+    type: 'documents',
+    contentType: 'atrium'
   },
   {
     id: '3',
@@ -33,7 +35,8 @@ const sourceAssets: SourceAsset[] = [
     brandIcon: 'https://api.builder.io/api/v1/image/assets/TEMP/f442e2187f541fe25a78a6c8f48e0d2c4eee061c?width=65',
     source: 'World Wide Web Consortium',
     title: 'Dialog (Modal) Pattern | APG | WAI | W3C',
-    type: 'documents'
+    type: 'documents',
+    contentType: 'w3c'
   },
   {
     id: '4',
@@ -41,7 +44,8 @@ const sourceAssets: SourceAsset[] = [
     brandIcon: 'https://api.builder.io/api/v1/image/assets/TEMP/f442e2187f541fe25a78a6c8f48e0d2c4eee061c?width=65',
     source: 'World Wide Web Consortium',
     title: 'Dialog (Modal) Pattern | APG | WAI | W3C',
-    type: 'documents'
+    type: 'documents',
+    contentType: 'w3c'
   },
   {
     id: '5',
@@ -50,7 +54,7 @@ const sourceAssets: SourceAsset[] = [
     source: 'Figma',
     title: 'Saffron component library',
     type: 'design',
-    isActive: true
+    contentType: 'figma'
   },
   {
     id: '6',
@@ -58,7 +62,8 @@ const sourceAssets: SourceAsset[] = [
     brandIcon: 'https://api.builder.io/api/v1/image/assets/TEMP/9ad507da15eed4e0b7513e9bb5d9f98111342718?width=92',
     source: 'Figma',
     title: '{Project file name}: a11y annotation example',
-    type: 'design'
+    type: 'design',
+    contentType: 'figma'
   }
 ];
 
