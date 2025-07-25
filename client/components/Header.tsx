@@ -1,4 +1,4 @@
-import { Plus, CircleQuestion, Bell, Grid, X, ArrowRightFromLine } from "lucide-react";
+import { Plus, HelpCircle, Bell, Grid3X3, X, ArrowRightFromLine } from "lucide-react";
 
 interface HeaderProps {
   onCloseExplorer?: () => void;
