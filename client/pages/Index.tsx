@@ -1,16 +1,26 @@
 import { useState } from "react";
 import { Header } from "../components/Header";
+import { Sidebar } from "../components/Sidebar";
 
 export default function Index() {
+  const [selectedAsset, setSelectedAsset] = useState<string | null>("5");
+
   const handleCloseExplorer = () => {
     console.log("Close explorer clicked");
+  };
+
+  const handleSelectAsset = (assetId: string) => {
+    setSelectedAsset(assetId);
   };
 
   return (
     <div className="min-h-screen bg-white min-w-[1280px]">
       <Header onCloseExplorer={handleCloseExplorer} />
-      <div className="p-8">
-        <h2 className="text-xl text-tr-gray-900">Header loaded successfully</h2>
+      <div className="flex h-[728px] w-full">
+        <Sidebar onSelectAsset={handleSelectAsset} />
+        <div className="flex-1 p-8">
+          <h2 className="text-xl text-tr-gray-900">Header and Sidebar loaded successfully</h2>
+        </div>
       </div>
     </div>
   );
