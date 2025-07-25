@@ -2,7 +2,7 @@ import { ChevronRight } from "lucide-react";
 
 export function MainContent() {
   return (
-    <div className="flex-1 p-4 h-[637px] overflow-y-auto">
+    <div className="w-full p-4 h-[637px] overflow-y-auto">
       <div className="max-w-none">
         {/* Q&A Reference Section */}
         <div className="p-4 border border-tr-gray-200 rounded-lg mb-4">
