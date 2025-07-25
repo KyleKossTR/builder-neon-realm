@@ -1,11 +1,35 @@
 import { ChevronRight } from "lucide-react";
+import { StorybookContent } from "./StorybookContent";
+import { AtriumContent } from "./AtriumContent";
+import { W3CContent } from "./W3CContent";
+import { FigmaContent } from "./FigmaContent";
+import { SourceAsset } from "./Sidebar";
 
-export function MainContent() {
+interface MainContentProps {
+  selectedAsset: SourceAsset;
+}
+
+export function MainContent({ selectedAsset }: MainContentProps) {
+  const renderContent = () => {
+    switch (selectedAsset.contentType) {
+      case 'storybook':
+        return <StorybookContent />;
+      case 'atrium':
+        return <AtriumContent />;
+      case 'w3c':
+        return <W3CContent />;
+      case 'figma':
+        return <FigmaContent />;
+      default:
+        return <FigmaContent />;
+    }
+  };
+
   return (
     <div className="w-full p-4 h-[637px] overflow-y-auto">
-      <div className="max-w-none">
+      <div className="max-w-none space-y-4">
         {/* Q&A Reference Section */}
-        <div className="p-4 border border-tr-gray-200 rounded-lg mb-4">
+        <div className="p-4 border border-tr-gray-200 rounded-lg">
           {/* Question */}
           <div className="flex items-baseline gap-4 pb-4 mb-4 border-b border-tr-gray-200">
             <div className="w-[70px] text-tr-gray-900 font-sans text-base font-semibold leading-6 flex-shrink-0">
@@ -32,14 +56,8 @@ export function MainContent() {
           </div>
         </div>
 
-        {/* Component Screenshot */}
-        <div className="w-full">
-          <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/99ba084bf94eb5576b31c1244329140e424e3b20?width=1348"
-            alt="Saffron component library dialog examples"
-            className="w-full max-w-[674px] h-auto rounded"
-          />
-        </div>
+        {/* Dynamic Content Based on Selected Source */}
+        {renderContent()}
       </div>
     </div>
   );
