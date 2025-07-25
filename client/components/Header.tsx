@@ -8,24 +8,22 @@ export function Header({ onCloseExplorer }: HeaderProps) {
   return (
     <>
       {/* Main Header */}
-      <header className="w-full min-w-[1024px] h-14 bg-white border-b border-tr-gray-200 flex items-center justify-between px-8">
-        <div className="flex items-center gap-4">
+      <header className="w-full min-w-[1280px] h-14 bg-white border-b border-tr-gray-200 flex items-center px-8">
+        <div className="flex items-center gap-4 flex-1">
           {/* Logo and Product Identity */}
           <div className="flex items-center gap-4 flex-1">
-            <div className="flex items-center gap-4">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/a4e23e45962eb1f42391c5812f1ca0003e9e3148?width=386" 
-                alt="Thomson Reuters Logo" 
-                className="h-6.5"
-              />
-              <span className="text-tr-orange-400 font-clario text-lg font-bold leading-none">
-                Product Name
-              </span>
-            </div>
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/a4e23e45962eb1f42391c5812f1ca0003e9e3148?width=386"
+              alt="Thomson Reuters Logo"
+              className="h-6.5"
+            />
+            <span className="text-tr-orange-400 font-clario text-[19px] font-bold leading-[100%]">
+              Product Name
+            </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1">
           {/* New Conversation Button */}
           <button className="flex items-center gap-2 px-2 py-1 bg-black text-tr-gray-100 rounded border border-black text-base font-semibold min-h-8">
             <Plus className="w-4 h-4" />
@@ -33,29 +31,27 @@ export function Header({ onCloseExplorer }: HeaderProps) {
           </button>
 
           {/* Divider */}
-          <div className="w-px h-10 bg-tr-gray-300"></div>
+          <div className="w-px h-10 bg-tr-gray-300 mx-1"></div>
 
           {/* Global Icons */}
-          <div className="flex items-center gap-1">
-            <button className="p-3 hover:bg-gray-50 rounded">
-              <CircleQuestion className="w-4 h-4 text-tr-gray-900" />
-            </button>
-            <button className="p-3 hover:bg-gray-50 rounded">
-              <Bell className="w-4 h-4 text-tr-gray-900" />
-            </button>
-            <button className="p-3 hover:bg-gray-50 rounded">
-              <Grid className="w-4 h-4 text-tr-gray-900" />
-            </button>
-            
-            {/* Avatar */}
-            <button className="p-2 hover:bg-gray-50 rounded">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/35f26ada4873950822d613b9f89e35116a4bc99e?width=48"
-                alt="User Avatar"
-                className="w-6 h-6 rounded-full border border-tr-gray-300"
-              />
-            </button>
-          </div>
+          <button className="p-3 hover:bg-gray-50 rounded">
+            <CircleQuestion className="w-4 h-4 text-tr-gray-900" />
+          </button>
+          <button className="p-3 hover:bg-gray-50 rounded">
+            <Bell className="w-4 h-4 text-tr-gray-900" />
+          </button>
+          <button className="p-3 hover:bg-gray-50 rounded">
+            <Grid className="w-4 h-4 text-tr-gray-900" />
+          </button>
+
+          {/* Avatar */}
+          <button className="p-2 hover:bg-gray-50 rounded">
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/35f26ada4873950822d613b9f89e35116a4bc99e?width=48"
+              alt="User Avatar"
+              className="w-6 h-6 rounded-full border border-tr-gray-300"
+            />
+          </button>
         </div>
       </header>
 
