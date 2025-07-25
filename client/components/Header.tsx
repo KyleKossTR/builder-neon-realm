@@ -35,13 +35,13 @@ export function Header({ onCloseExplorer }: HeaderProps) {
 
           {/* Global Icons */}
           <button className="p-3 hover:bg-gray-50 rounded">
-            <CircleQuestion className="w-4 h-4 text-tr-gray-900" />
+            <HelpCircle className="w-4 h-4 text-tr-gray-900" />
           </button>
           <button className="p-3 hover:bg-gray-50 rounded">
             <Bell className="w-4 h-4 text-tr-gray-900" />
           </button>
           <button className="p-3 hover:bg-gray-50 rounded">
-            <Grid className="w-4 h-4 text-tr-gray-900" />
+            <Grid3X3 className="w-4 h-4 text-tr-gray-900" />
           </button>
 
           {/* Avatar */}
